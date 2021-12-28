@@ -1,0 +1,1 @@
+Creating an etch-a-sketch. Should solidify what I've learned about DOM manipulation.
