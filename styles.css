@@ -1,9 +1,3 @@
-:root {
-    --grid-cols: 1;
-    --grid-rows: 1;
-    /* --item-size: (--grid-cols / 103); */
-}
-
 *, *::after, *::before {
     box-sizing: border-box;
     margin: 0;
@@ -14,34 +8,59 @@ html, body {
     max-width: 100vw;
     max-height: 100vh;
     place-items: center;
+    text-align:center;
+    background-color: rgb(120, 160, 161);
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 header {
     text-align: center;
     padding: 1em;
+    font-size: 2.5em;
+}
+
+footer {
+    text-align: center;
+    margin-top: 1em;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: white;
 }
 
 .clear {
     font-size: 1.5em;
 }
 
+#freshStart {
+    font-size: 1.5em;
+    color:rgb(120, 160, 161);
+    padding: .25em;
+    border-radius: 3px;
+    font-family: inherit;
+}
+
 /* --grid-rows is altered dynamically in the script page */
 /* creates rows and columns of 1fr size --grid-rows x --grid-cols times */
 #container {
     display: grid;
-    place-items: center;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
-    max-height: 60vh;
-    max-width: 60vw;
-    text-align: center;
+    grid-template-columns: repeat(16, 1fr);;
+    border: 4px solid black;
+    border-radius: 6px;
+    height: 28em;
+    width: 28em;
+    background-color: white;
+    margin: auto;
+    margin-top: 1.5em;
 }
   
 /* basic styles for the grid */
 .grid-item {
     color: white;
-    border: 1px solid grey;
     background-color: white;
-    height:4em;
-    width:4em;
 }
