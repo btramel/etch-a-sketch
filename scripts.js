@@ -1,5 +1,6 @@
 // sets important constants and variables
 const container = document.getElementById('container');
+const item = document.getElementsByClassName('grid-item');
 let defaultSize = 16;
 
 function makeRows(rows, cols) {
@@ -13,10 +14,29 @@ function makeRows(rows, cols) {
     // also adds classname "grid-item" to the element
     for (c = 0; c < (rows * cols); c++) {
       let cell = document.createElement('div');
-      cell.innerText = (c + 1);
+    //   cell.innerText = (c + 1);
+      cell.addEventListener('mouseover', function( event ) {
+          event.target.style.backgroundColor = 'black';
+          event.target.style.color = 'black';
+      });
       container.appendChild(cell).className = 'grid-item';
     };
-  };
-  
-  // calls the function to defaultSize of 16 x 16
-  makeRows(defaultSize, defaultSize);
+
+       //   reset etch-a-sketch
+      item.style.setProperty('backgroundColor', white);
+      item.style.setProperty('color', white);
+      
+};
+
+function reset() {
+    newGridSize = prompt('How large a grid would you like?');
+    makeRows(newGridSize, newGridSize);
+};
+
+document.getElementById('freshStart').onclick = function() {
+     reset()
+};
+
+
+// calls the function to defaultSize of 16 x 16
+makeRows(defaultSize, defaultSize);
